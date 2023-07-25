@@ -1,3 +1,9 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["airbnb-typescript", "next/core-web-vitals"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    // Añade aquí tus reglas personalizadas
+  }
 }
