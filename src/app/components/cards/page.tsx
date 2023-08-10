@@ -13,8 +13,7 @@ export default function Cards() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const { data } = await axios.get('http://localhost:3001/products?page=0&quantity=12');
-        dispatch(loadShoes(data.content));
+        dispatch(await loadShoes());
       } catch (error) {
         console.log(error);
       }
@@ -24,7 +23,7 @@ export default function Cards() {
 
   return (
     <div>
-      {shoesToRender?.map((s:ProductDto) => <Card key={s.id} product={s}></Card>)}
+      {shoesToRender?.map((s: ProductDto) => <Card key={s.id} product={s}></Card>)}
     </div>
   );
 }
