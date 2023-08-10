@@ -4,7 +4,6 @@ import React, { useEffect } from 'react';
 import Card from '../card/page';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import axios from 'axios';
 import { ProductDto, loadShoes } from '@/redux/actions';
 export default function Cards() {
   const { shoesToRender } = useSelector((s: any) => s);
