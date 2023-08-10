@@ -4,6 +4,8 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "default-param-last": "off",
+    "@typescript-eslint/default-param-last": "error"
     // Añade aquí tus reglas personalizadas
   }
 }
