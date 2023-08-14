@@ -1,22 +1,16 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  image_url: string;
-  description: string;
-}
+import { useState } from 'react';
+import Link from 'next/link';
+import { ProductDto } from '@/redux/actions';
 
 interface CardProps {
-  product: Product;
+  product: ProductDto;
 }
 
 const Card: React.FC<CardProps> = ({ product }) => {
   const [showDescription, setShowDescription] = useState(false);
+  console.log(showDescription);
 
   const handleMouseEnter = () => {
     setShowDescription(true);
@@ -28,18 +22,18 @@ const Card: React.FC<CardProps> = ({ product }) => {
 
   return (
     <div>
-      <Link href={`/products/${product.id}`}>
+      <Link href={`/products/${product?.id}`}>
         <div>
-          <h3>{product.name}</h3>
+          <h3>{product?.brand + ' ' + product?.model}</h3>
         </div>
         <div>
           <span>$ </span>
-          {product.price}
+          {product?.price}
         </div>
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-          <img src={product.image_url} alt={product.name} />
+          <img src={product?.img} alt={product?.model} />
           <div>
-            <p>{product.description}</p>
+            <p>{product?.description}</p>
           </div>
         </div>
       </Link>
