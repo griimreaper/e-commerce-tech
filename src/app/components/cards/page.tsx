@@ -3,18 +3,16 @@
 import React, { useEffect } from 'react';
 import Card from '../card/page';
 import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
 import { ProductDto, loadShoes } from '@/redux/actions';
 
 export default function Cards() {
-  const { shoesToRender } = useSelector((state: RootState) => state.shoes);
+  const { shoesToRender } = useSelector((state: any) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const { data } = await axios.get('http://localhost:3001/products?page=0&quantity=12');
-        dispatch(loadShoes(data.content));
+        await dispatch(await loadShoes());
       } catch (error) {
         console.log(error);
       }
@@ -24,7 +22,9 @@ export default function Cards() {
 
   return (
     <div>
-      {shoesToRender?.map((s:ProductDto) => <Card key={s.id} product={s}></Card>)}
+      {shoesToRender?.map((s: ProductDto) => (
+        <Card key={s.id} product={s} />
+      ))}
     </div>
   );
 }
