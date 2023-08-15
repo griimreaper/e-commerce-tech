@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import Image from "next/image";
-import logo from "../../../../public/UrbanWest.png";
+import React, { useState } from 'react';
+import Image from 'next/image';
+import logo from '../../../../public/UrbanWest.png';
 
 export default function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -49,7 +49,7 @@ export default function Navbar() {
           </button>
           {/* Search input */}
           <div
-            className={`relative ${isSearchOpen ? "block" : "hidden"} md:block`}
+            className={`relative ${isSearchOpen ? 'block' : 'hidden'} md:block`}
           >
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
@@ -103,7 +103,7 @@ export default function Navbar() {
         {/* Desktop menu */}
         <div
           className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
-            isSearchOpen ? "block" : "hidden"
+            isSearchOpen ? 'block' : 'hidden'
           }`}
           id="navbar-search"
         >

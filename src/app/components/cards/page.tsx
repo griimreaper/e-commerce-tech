@@ -21,7 +21,7 @@ export default function Cards() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-transparent">
       {shoesToRender?.map((s: ProductDto) => (
         <Card key={s.id} product={s} />
       ))}

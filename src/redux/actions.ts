@@ -31,7 +31,7 @@ export const setDarkMode = (darkMode: Boolean) => ({
 
 export const loadShoes = async (): Promise<any> => {
   try {
-    const { data } = await axios.get('http://localhost:3001/products?page=0&quantity=12');
+    const { data } = await axios.get('http://localhost:3001/products/get?page=0&quantity=12');
     return {
       type: ActionTypes.LOAD_SHOES,
       payload: data.content,
