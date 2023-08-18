@@ -18,7 +18,7 @@ export default function Cards() {
       }
     }
     fetchData();
-  }, [dispatch]);
+  }, []);
 
   return (
     <div>
